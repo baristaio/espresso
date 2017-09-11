@@ -1,0 +1,19 @@
+{
+  "name": "espresso",
+  "version": "0.0.1",
+  "description": "The Espresso microservice wrapper",
+  "main": "service.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vadimri/espresso.git"
+  },
+  "author": "VadimRi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vadimri/espresso/issues"
+  },
+  "homepage": "https://github.com/vadimri/espresso#readme"
+}
