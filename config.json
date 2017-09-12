@@ -1,0 +1,14 @@
+
+{
+  "port": 3001,
+  "mongodb": {
+    "uri" : "mongodb://vadimsky:1q2w3e@cluster0-shard-00-00-74bzd.mongodb.net:27017,cluster0-shard-00-01-74bzd.mongodb.net:27017,cluster0-shard-00-02-74bzd.mongodb.net:27017/panda-demo?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin",
+    "options": {
+      "server": {
+        "socketOptions": {
+          "keepAlive": 1
+        }
+      }
+    }
+  }
+}

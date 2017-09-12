@@ -1,0 +1,7 @@
+{
+  "presets": [
+    "node8-es6",
+    "node8",
+    "env"
+  ]
+}
