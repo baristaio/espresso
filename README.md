@@ -7,6 +7,21 @@ The micro service sugar
 
 
 ## API
+- espresso.getService
+ params: 
+    service name
+ return service ()
+    
+- Service API
+    - start: start the service and return the stop method
+    - stop
+    - routes: 
+    { 
+        route: "route",
+        controller: "controller"
+    }
+    
+
 
 
 
@@ -17,19 +32,11 @@ The micro service sugar
 const espresso = required('espresso');
 const controller = required('./controllers/<your controller>');
 
-espresso.init({
+const service = espresso.getService({
     name: 'myService',
-    controllers: [
-        {
-            name: 'controller.name',
-            params: [
-                {
-                    name: "paramName",
-                    type: "type"
-                }
-            ]}
-        ]
 });
+
+service.use('')
 
 ```
 
