@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = require('./lib/service');
+exports = module.exports = require('./lib/service');
