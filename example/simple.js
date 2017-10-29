@@ -1,19 +1,30 @@
+"use strict";
+import 'babel-polyfill'
+
 const espresso = require('../lib');
+const controller = require('./simple.ctrl');
 
-const routes = {};
-const serviceDescriptor = {
-    name: 'service name',
-    description: 'the test service',
-    routes: routes
-};
+export const routes = [
+    {
+        path: '/hello',
+        method: 'get',
+        controller: controller.sayHelloController
+    },
+    {
+        path: '/hello1',
+        method: 'get',
+        controller: controller.sayHelloController
+    },
+    {
+        path: 'hello1',
+        method: 'put',
+        controller: controller.sayHelloController
+    }
+];
 
-// const service = espresso.start(serviceDescriptor, 2);
-const start = async (param) => await espresso.startTest(param);
 
-start('Test').then((value) =>  console.log(value));
-
-// Local
 const localServiceDescriptor = {
+    port: 3000,
     name: 'service name',
     description: 'the test service',
     routes: routes,
@@ -21,7 +32,13 @@ const localServiceDescriptor = {
 };
 
 const service = espresso.getService(localServiceDescriptor);
-service.start();
+const stop = service.start();
+
+// stop the service after 1 minute
+setTimeout( ()=> {
+    service.stop('Time expired');
+}, 60* 1000);
+
 // Dev start
 
 

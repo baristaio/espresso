@@ -97,6 +97,6 @@ const service = espresso.getService({
     name: 'myService',
 });
 
-service
+service.start();
 
-
+service.stop('reason');
