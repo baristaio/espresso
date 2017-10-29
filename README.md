@@ -102,6 +102,7 @@ const service = espresso.getService({
 service.start();
 
 service.stop('reason');
+```
 
 for run example please use node parameters: -r babel-register:
 
@@ -110,3 +111,4 @@ for run example please use node parameters: -r babel-register:
 > node -r babel-register simple.js
 
 the service will stoped after 1 minute.
+
