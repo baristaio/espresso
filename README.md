@@ -89,6 +89,8 @@ ControllerDescriptor
 
 
 ## Examples
+
+
 ```javascript
 const espresso = required('espresso');
 const controller = required('./controllers/<your controller>');
@@ -100,3 +102,16 @@ const service = espresso.getService({
 service.start();
 
 service.stop('reason');
+```
+
+for run example please use node parameters: -r babel-register:
+
+> npm i 
+
+> cd example
+
+> node -r babel-register simple.js 
+
+
+the service will stoped after 1 minute.
+
