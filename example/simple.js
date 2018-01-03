@@ -11,21 +11,32 @@ export const routes = [
         controller: controller.sayHelloController
     },
     {
+        path: '/carmel',
+        method: 'get',
+        controller: controller.sayHelloController
+    },
+    {
         path: '/hello1',
         method: 'get',
         controller: controller.sayHelloController
     },
     {
-        path: 'hello1',
-        method: 'put',
+        path: '/hello1',
+        method: 'get',
         controller: controller.sayHelloController
+    },
+    {
+        path: '/roma',
+        method: 'get',
+        controller: controller.romaSayHello
     }
 ];
 
 
 const localServiceDescriptor = {
+    barista: '',
     port: 3000,
-    name: 'service name',
+    name: 'My Super Service',
     description: 'the test service',
     routes: routes,
     env: 'local'
