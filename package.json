@@ -23,6 +23,7 @@
   "homepage": "https://github.com/vadimri/espresso#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.3",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-node8": "^1.2.0",
@@ -30,6 +31,8 @@
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "coveralls": "^2.13.3",
+    "eslint": "^4.19.1",
+    "eslint-plugin-babel": "^5.0.0",
     "istanbul": "^0.4.5",
     "mocha": "^3.5.0",
     "request": "^2.83.0"
@@ -38,9 +41,9 @@
     "bunyan": "^1.8.12",
     "cors": "^2.8.4",
     "express": "^4.16.2",
-    "express-bunyan-logger": "^1.3.2"
+    "express-bunyan-logger": "^1.3.2",
+    "yarn": "^1.5.1"
   },
-
   "engines": {
     "node": ">=8.4.0"
   }
