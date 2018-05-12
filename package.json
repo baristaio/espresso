@@ -1,5 +1,5 @@
 {
-  "name": "espresso",
+  "name": "@baristaio/espresso",
   "version": "0.0.1",
   "description": "The Espresso microservice wrapper",
   "main": "service.js",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vadimri/espresso.git"
+    "url": "git+https://github.com/baristaio/espresso.git"
   },
   "author": "vadimri",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vadimri/espresso/issues"
+    "url": "https://github.com/baristaio/espresso/issues"
   },
-  "homepage": "https://github.com/vadimri/espresso#readme",
+  "homepage": "https://github.com/baristaio/espresso#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.3",
