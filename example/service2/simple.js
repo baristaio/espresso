@@ -34,7 +34,4 @@ setTimeout(()=> {
   service.stop(localServiceDescriptor.name, ' :Time expired');
 }, 60 * 1000 * 3);
 
-// Dev start
-
-// Prod Start
 
