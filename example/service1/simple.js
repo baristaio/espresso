@@ -11,24 +11,9 @@ export const routes = [
     controller: controller.sayHelloController
   },
   {
-    path: '/carmel',
+    path: '/world',
     method: 'get',
-    controller: controller.sayHelloController
-  },
-  {
-    path: '/hello1',
-    method: 'get',
-    controller: controller.sayHelloController
-  },
-  {
-    path: '/hello1',
-    method: 'get',
-    controller: controller.sayHelloController
-  },
-  {
-    path: '/roma',
-    method: 'get',
-    controller: controller.romaSayHello
+    controller: controller.helloWorldController
   }
 ];
 

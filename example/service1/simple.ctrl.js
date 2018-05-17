@@ -15,10 +15,10 @@ export async function sayHelloController(log, req, res, next) {
   });
 
 }
-export function romaSayHello(log, req, res) {
+export function helloWorldController(log, req, res) {
   return new Promise(resolve => {
     log.info(sayHelloController);
-    res.send('hello world!!!');
+    res.send('Hello world!!!');
     resolve();
   });
 }
