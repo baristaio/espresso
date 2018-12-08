@@ -1,15 +1,10 @@
 {
   "name": "@baristaio/espresso",
   "version": "0.0.1",
-  "description": "The Espresso microservice wrapper",
+  "description": "The Espresso micro service wrapper",
   "main": "service.js",
   "scripts": {
-    "test": "mocha --require babel-polyfill --compilers js:babel-register  ./**/*.spec.js",
-    "clean": "rm  -rf dist",
-    "start": "node bin/dev",
-    "build": "npm run clean && mkdir dist && babel ./lib/ -s -d dist",
-    "postinstall": "npm run build",
-    "prod": "npm run build && npm run test && node ./bin/prod"
+    "test": "mocha  ./**/*.spec.js"
   },
   "repository": {
     "type": "git",
@@ -22,28 +17,26 @@
   },
   "homepage": "https://github.com/baristaio/espresso#readme",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^8.2.3",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-node8": "^1.2.0",
-    "babel-preset-node8-es6": "^12.0.0",
-    "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "coveralls": "^3.0.1",
     "deep-extend": "^0.5.1",
-    "eslint": "^4.19.1",
+    "eslint": "^5.5.0",
     "eslint-plugin-babel": "^5.1.0",
     "fsevents": "^1.2.4",
     "istanbul": "^0.4.5",
-    "mocha": "^5.1.1",
+    "mocha": "^5.2.0",
     "request": "^2.86.0"
   },
   "dependencies": {
+    "amqplib": "0.5.2",
+    "assert": "^1.4.1",
+    "body-parser": "^1.18.3",
     "bunyan": "^1.8.12",
-    "cors": "^2.8.4",
+    "cors": "^2.8.5",
     "express": "^4.16.2",
     "express-bunyan-logger": "^1.3.2",
+    "mongodb": "^3.1.10",
+    "mysql2": "^1.6.4",
     "yarn": "^1.6.0"
   },
   "engines": {

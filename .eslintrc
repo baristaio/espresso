@@ -26,13 +26,12 @@
   },
   "env": {
     //    "browser": true,
+    "commonjs": true,
+    "mocha": true,
     "node": true,
     "es6": true
   },
-  "parser": "babel-eslint",
-  "plugins": [
-    "babel"
-  ],
+  "parser": "esprima",
   "rules": {
     /*Possible Errors */
     "comma-dangle": ["error", "never"],
@@ -131,7 +130,7 @@
     "no-undef": 1,
     "no-undefined": 1,
     "no-unused-vars": [1, { "vars": "local", "args": "after-used" }],
-    "no-use-before-define": 1,
+    "no-use-before-define": 0,
 
     /* Node.js */
     "handle-callback-err": 1,
@@ -178,7 +177,7 @@
     "operator-assignment": [1, "never"],
     "padded-blocks": [0, "never"],
     "quote-props": [0, "as-needed"],
-    //    "quotes": [1, "single"],
+    "quotes": [1, "single"],
     "semi-spacing": [1, { "before": false, "after": true }],
     "semi": [1, "always"],
     "sort-vars": 0,
@@ -206,15 +205,6 @@
     "max-params": 0,
     "max-statements": 0,
     "no-bitwise": 1,
-    "no-plusplus": 1,
-
-    /* Babel */
-    // "babel/block-scoped-var": 1,
-    "babel/object-shorthand": [1, "always"],
-    // "babel/generator-star": 1, // deprecated
-    "babel/generator-star-spacing": [1, "after"],
-    "babel/new-cap": 1,
-    "babel/object-curly-spacing": [1, "always"]
-    // "babel/space-in-brackets": 1, // deprecated
+    "no-plusplus": 1
   }
 }
