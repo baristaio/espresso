@@ -1,6 +1,6 @@
 {
   "name": "@baristaio/espresso",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "The Espresso micro service wrapper",
   "main": "service.js",
   "scripts": {
@@ -22,7 +22,6 @@
     "deep-extend": "^0.5.1",
     "eslint": "^5.5.0",
     "fsevents": "^1.2.4",
-    "istanbul": "^0.4.5",
     "mocha": "^5.2.0"
   },
   "dependencies": {
@@ -38,8 +37,7 @@
     "jwk-to-pem": "^2.0.1",
     "mongodb": "^3.1.10",
     "mysql2": "^1.6.4",
-    "request": "^2.86.0",
-    "yarn": "^1.6.0"
+    "request": "^2.86.0"
   },
   "engines": {
     "node": ">=8.11.1"
