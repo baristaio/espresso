@@ -57,11 +57,9 @@ const localServiceDescriptor = {
       },
       durable: true,
       noAck: false,
-      controller: async(message, {logger, connections}) => actions.doAction(message, {logger, connections})
+      controller: async(message, {logger, connections}) => actions.doAction(message, { logger, connections })
     }
   ]
-}
-
 };
 
 const service = espresso.getService(localServiceDescriptor);
