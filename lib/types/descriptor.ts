@@ -6,8 +6,6 @@ export interface Route {
     route: string,
     method: string,
     controller: CallbackFunctionVariadicAnyReturn,
-    before?: CallbackFunctionVariadicAnyReturn,
-    middleware?: CallbackFunctionVariadicAnyReturn
 }
 
 
