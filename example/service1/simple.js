@@ -3,12 +3,14 @@ const controller = require('./simple.ctrl');
 
 const routes = [
   {
-    path: '/hello',
+    headers: { 'Content-Type': 'application/json' },
+    route: '/hello',
     method: 'get',
     controller: controller.sayHelloController
   },
   {
-    path: '/world',
+    headers: { 'Content-Type': 'application/json' },
+    route: '/world',
     method: 'get',
     controller: controller.helloWorldController
   }
@@ -44,22 +46,22 @@ const localServiceDescriptor = {
         }
       }
     }
-  ],
-  subQueue: process.env.SUB_QUEUE || 'sub_test_task',
-  pubQueue: process.env.PUB_QUEUE || 'pub_test_task',
-  subscribers: [
-    {
-      prefetch: 1,
-      queue: process.env.SUB_QUEUE || 'sub_test_task',
-      pubQueue: {
-        queue: process.env.PUB_QUEUE || 'pub_test_task',
-        durable: true
-      },
-      durable: true,
-      noAck: false,
-      controller: async(message, {logger, connections}) => actions.doAction(message, { logger, connections })
-    }
   ]
+  // subQueue: process.env.SUB_QUEUE || 'sub_test_task',
+  // pubQueue: process.env.PUB_QUEUE || 'pub_test_task',
+  // subscribers: [
+  //   {
+  //     prefetch: 1,
+  //     queue: process.env.SUB_QUEUE || 'sub_test_task',
+  //     pubQueue: {
+  //       queue: process.env.PUB_QUEUE || 'pub_test_task',
+  //       durable: true
+  //     },
+  //     durable: true,
+  //     noAck: false,
+  //     controller: async(message, {logger, connections}) => actions.doAction(message, { logger, connections })
+  //   }
+  // ]
 };
 
 const service = espresso.getService(localServiceDescriptor);
