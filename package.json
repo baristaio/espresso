@@ -1,7 +1,7 @@
 {
   "name": "@baristaio/espresso",
-  "version": "0.0.6.1",
-  "description": "The Espresso micro service wrapper",
+  "version": "0.0.7.1",
+  "description": "The Espresso micro service wrapper (express based)",
   "main": "service.js",
   "scripts": {
     "test": "mocha  ./**/*.spec.js"
