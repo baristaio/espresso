@@ -65,12 +65,15 @@ const localServiceDescriptor = {
 };
 
 const service = espresso.getService(localServiceDescriptor);
-const stop = service.start();
+service.start().then(() => {
+  // stop the service after 1 minute
+  setTimeout(() => {
+    service.stop(localServiceDescriptor.name, ' :Time expired');
+  }, 60 * 1000 * 3);
 
-// stop the service after 1 minute
-setTimeout(() => {
-  service.stop(localServiceDescriptor.name, ' :Time expired');
-}, 60 * 1000 * 3);
+});
+
+
 
 // Dev start
 
