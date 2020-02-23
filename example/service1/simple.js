@@ -13,6 +13,12 @@ const routes = [
     route: '/world',
     method: 'get',
     controller: controller.helloWorldController
+  },
+  {
+    headers: { 'Content-Type': 'application/json' },
+    route: '/redis',
+    method: 'get',
+    controller: controller.redisTest
   }
 ];
 
@@ -36,13 +42,13 @@ const localServiceDescriptor = {
       }
     },
     {
-      name: 'amqp2',
-      type: 'amqp',
+      name: 'redis',
+      type: 'redis',
       descriptor: {
-        host: process.env.RABBIT_HOST || '127.0.0.1',
+        host: process.env.REDIS_HOST || '127.0.0.1',
         options: {
-          login: process.env.RABBIT_USER || 'guest',
-          password: process.env.RABBIT_PASSW || 'guest'
+          port: process.env.REDIS_PORT,
+          password: process.env.REDIS_PASSW
         }
       }
     }

@@ -25,6 +25,16 @@ function helloWorldController(log, connections, req, res) {
 const readTest = async(logger, connections, req) => {
   return mySqlTest(logger, connections, 'mysql-read');
 };
+
+const redisTest = async(logger, connections, req) => {
+  logger.info('redis test');
+  const client = connections.redis;
+  client.set('foo', 'bar');
+  const foo = client.get('foo');
+  logger.info(`foo ---> ${foo}`);
+  return {foo};
+};
+
 const writeTest = async(logger, connections, req) => {
   return mySqlTest(logger, connections, 'mysql-write');
 };
@@ -50,5 +60,6 @@ module.exports = {
   sayHelloController,
   helloWorldController,
   writeTest,
-  readTest
+  readTest,
+  redisTest
 };
