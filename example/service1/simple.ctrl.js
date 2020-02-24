@@ -26,13 +26,22 @@ const readTest = async(logger, connections, req) => {
   return mySqlTest(logger, connections, 'mysql-read');
 };
 
-const redisTest = async(logger, connections, req) => {
+const redisTest = (logger, connections, req) => {
   logger.info('redis test');
   const client = connections.redis;
-  client.set('foo', 'bar');
-  const foo = client.get('foo');
-  logger.info(`foo ---> ${foo}`);
-  return {foo};
+  client.set('foo', 'bar1');
+
+  return new Promise(resolve => {
+    client.get('foo', (error, value) => {
+      if (error) {
+        throw error;
+      }
+
+      logger.info(`foo ---> ${value}`);
+      resolve({value});
+    });
+  });
+
 };
 
 const writeTest = async(logger, connections, req) => {
