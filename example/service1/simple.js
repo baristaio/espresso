@@ -30,23 +30,23 @@ const localServiceDescriptor = {
   routes: routes,
   env: 'local',
   connections: [
-    {
-      name: 'amqp1',
-      type: 'amqp',
-      descriptor: {
-        host: process.env.RABBIT_HOST || '127.0.0.1',
-        options: {
-          login: process.env.RABBIT_USER || 'guest',
-          password: process.env.RABBIT_PASSW || 'guest'
-        }
-      }
-    },
+    // {
+    //   name: 'amqp1',
+    //   type: 'amqp',
+    //   descriptor: {
+    //     host: process.env.RABBIT_HOST || '127.0.0.1',
+    //     options: {
+    //       login: process.env.RABBIT_USER || 'guest',
+    //       password: process.env.RABBIT_PASSW || 'guest'
+    //     }
+    //   }
+    // },
     {
       name: 'redis',
       type: 'redis',
       descriptor: {
-        host: process.env.REDIS_HOST || '127.0.0.1',
         options: {
+          host: process.env.REDIS_HOST,
           port: process.env.REDIS_PORT,
           password: process.env.REDIS_PASSW
         }

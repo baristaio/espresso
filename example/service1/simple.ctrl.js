@@ -41,7 +41,6 @@ const redisTest = (logger, connections, req) => {
       resolve({value});
     });
   });
-
 };
 
 const writeTest = async(logger, connections, req) => {
