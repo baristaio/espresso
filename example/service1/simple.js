@@ -30,17 +30,17 @@ const localServiceDescriptor = {
   routes: routes,
   env: 'local',
   connections: [
-    // {
-    //   name: 'amqp1',
-    //   type: 'amqp',
-    //   descriptor: {
-    //     host: process.env.RABBIT_HOST || '127.0.0.1',
-    //     options: {
-    //       login: process.env.RABBIT_USER || 'guest',
-    //       password: process.env.RABBIT_PASSW || 'guest'
-    //     }
-    //   }
-    // },
+    {
+      name: 'amqp',
+      type: 'amqp',
+      descriptor: {
+        host: process.env.RABBIT_HOST || '127.0.0.1',
+        options: {
+          login: process.env.RABBIT_USER || 'guest',
+          password: process.env.RABBIT_PASSW || 'guest'
+        }
+      }
+    },
     {
       name: 'redis',
       type: 'redis',
@@ -52,22 +52,22 @@ const localServiceDescriptor = {
         }
       }
     }
+  ],
+  subQueue: process.env.SUB_QUEUE || 'sub_test_task',
+  pubQueue: process.env.PUB_QUEUE || 'pub_test_task',
+  subscribers: [
+    {
+      prefetch: 1,
+      queue: process.env.SUB_QUEUE || 'sub_test_task',
+      pubQueue: {
+        queue: process.env.PUB_QUEUE || 'pub_test_task',
+        durable: true
+      },
+      durable: true,
+      noAck: false,
+      controller: async(message, {logger, connections}) => controller.rabbitTest(message, { logger, connections })
+    }
   ]
-  // subQueue: process.env.SUB_QUEUE || 'sub_test_task',
-  // pubQueue: process.env.PUB_QUEUE || 'pub_test_task',
-  // subscribers: [
-  //   {
-  //     prefetch: 1,
-  //     queue: process.env.SUB_QUEUE || 'sub_test_task',
-  //     pubQueue: {
-  //       queue: process.env.PUB_QUEUE || 'pub_test_task',
-  //       durable: true
-  //     },
-  //     durable: true,
-  //     noAck: false,
-  //     controller: async(message, {logger, connections}) => actions.doAction(message, { logger, connections })
-  //   }
-  // ]
 };
 
 const service = espresso.getService(localServiceDescriptor);
@@ -78,8 +78,6 @@ service.start().then(() => {
   }, 60 * 1000 * 3);
 
 });
-
-
 
 // Dev start
 

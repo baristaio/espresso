@@ -43,6 +43,15 @@ const redisTest = (logger, connections, req) => {
   });
 };
 
+const rabbitTest = async(message, { logger, connections }) => {
+  logger.info(`Rabbit test:  ${message}`);
+  const response = {
+    message: message
+  };
+  response.doPublish = true;
+  return response;
+};
+
 const writeTest = async(logger, connections, req) => {
   return mySqlTest(logger, connections, 'mysql-write');
 };
@@ -69,5 +78,6 @@ module.exports = {
   helloWorldController,
   writeTest,
   readTest,
-  redisTest
+  redisTest,
+  rabbitTest
 };

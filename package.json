@@ -1,6 +1,6 @@
 {
   "name": "@baristaio/espresso",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "The Espresso micro service wrapper (express based)",
   "main": "service.js",
   "scripts": {
@@ -25,7 +25,7 @@
     "mocha": "^5.2.0"
   },
   "dependencies": {
-    "amqplib": "0.5.2",
+    "amqplib": "0.5.5",
     "assert": "^1.4.1",
     "bluebird": "^3.5.3",
     "body-parser": "^1.18.3",
