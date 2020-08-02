@@ -29,6 +29,7 @@ const localServiceDescriptor = {
   description: 'the test service',
   routes: routes,
   env: 'local',
+  bodyLimit: 30,
   connections: [
     {
       name: 'amqp',
@@ -71,15 +72,29 @@ const localServiceDescriptor = {
 };
 
 const service = espresso.getService(localServiceDescriptor);
+let instance = {};
+
 service.start().then(() => {
   // stop the service after 1 minute
+  const logger = service.logger;
+  instance = {
+    started: true,
+    service,
+    logger
+  };
+
+  logger.info('Service Started: ', Date.now());
   setTimeout(() => {
-    service.stop(localServiceDescriptor.name, ' :Time expired');
-  }, 60 * 1000 * 3);
+    logger.info('Stop service');
+    service.stop('no need more... ', ' :Time expired');
+  }, 60 * 1000 * 10);
 
 });
 
-// Dev start
+module.exports = {
+  instance: () => instance
+};
 
+// Dev start
 // Prod Start
 

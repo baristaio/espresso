@@ -1,9 +1,16 @@
+const service = require('./simple');
+// import instance from './simple';
 
 //  business method
 const sayHello = (name) => `Hello ${name}!!!`;
 
 // controller
 function sayHelloController(log, connections, req, res) {
+  const instance = instance();
+  if (instance.started) {
+    log.info('Logger test');
+  }
+
   return new Promise(resolve => {
     log.info(sayHelloController);
     setTimeout(() => {
