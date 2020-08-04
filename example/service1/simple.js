@@ -46,11 +46,9 @@ const localServiceDescriptor = {
       name: 'redis',
       type: 'redis',
       descriptor: {
-        options: {
-          host: process.env.REDIS_HOST,
-          port: process.env.REDIS_PORT,
-          password: process.env.REDIS_PASSW
-        }
+        host: process.env.REDIS_HOST,
+        port: process.env.REDIS_PORT,
+        password: process.env.REDIS_PASSW
       }
     }
   ],
