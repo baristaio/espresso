@@ -6,18 +6,29 @@ const sayHello = (name) => `Hello ${name}!!!`;
 
 // controller
 function sayHelloController(log, connections, req, res) {
-  const instance = instance();
-  if (instance.started) {
-    log.info('Logger test');
-  }
-
-  return new Promise(resolve => {
+  const twilio = connections.whatsapp;
+  return new Promise((resolve, reject) => {
     log.info(sayHelloController);
-    setTimeout(() => {
-      const value = req.query.name;
-      res.send(sayHello(value));
-      resolve();
-    }, 100);
+    const value = req.params.value;
+
+    twilio.messages
+      .create({
+        from: 'whatsapp:+14155238886',
+        body: sayHello(value),
+        to: 'whatsapp:+9727757270'
+        // to: 'whatsapp:+972544649448'
+      })
+      .then(message => {
+        console.log(message.sid);
+        resolve({
+          status: 200,
+          body: message
+        });
+      })
+      .catch(e => {
+        log.error(e);
+        reject(e);
+      });
   });
 }
 

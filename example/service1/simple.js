@@ -4,7 +4,7 @@ const controller = require('./simple.ctrl');
 const routes = [
   {
     headers: { 'Content-Type': 'application/json' },
-    route: '/hello',
+    route: '/hello/:value',
     method: 'get',
     controller: controller.sayHelloController
   },
@@ -31,6 +31,14 @@ const localServiceDescriptor = {
   env: 'local',
   bodyLimit: 30,
   connections: [
+    {
+      name: 'whatsapp',
+      type: 'twilio',
+      descriptor: {
+        accountSid: 'ACebe9355d2716458c9416e28137b4097f',
+        authToken: '3d861c11ce786d64eb68e463cfc8fb0b'
+      }
+    },
     {
       name: 'amqp',
       type: 'amqp',
@@ -85,7 +93,7 @@ service.start().then(() => {
   setTimeout(() => {
     logger.info('Stop service');
     service.stop('no need more... ', ' :Time expired');
-  }, 60 * 1000 * 10);
+  }, 60 * 1000 * 20);
 
 });
 
