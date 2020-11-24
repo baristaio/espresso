@@ -35,8 +35,8 @@ const localServiceDescriptor = {
       name: 'whatsapp',
       type: 'twilio',
       descriptor: {
-        accountSid: 'ACebe9355d2716458c9416e28137b4097f',
-        authToken: '3d861c11ce786d64eb68e463cfc8fb0b'
+        accountSid: '',
+        authToken: ''
       }
     },
     {

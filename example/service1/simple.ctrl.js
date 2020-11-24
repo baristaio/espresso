@@ -13,10 +13,9 @@ function sayHelloController(log, connections, req, res) {
 
     twilio.messages
       .create({
-        from: 'whatsapp:+14155238886',
+        from: '',
         body: sayHello(value),
-        to: 'whatsapp:+9727757270'
-        // to: 'whatsapp:+972544649448'
+        to: ''
       })
       .then(message => {
         console.log(message.sid);
