@@ -1,5 +1,6 @@
 const espresso = require('../../lib/index');
 const controller = require('./simple.ctrl');
+const redis = require('../../lib/clients/redis-client');
 
 const routes = [
   {
@@ -24,7 +25,7 @@ const routes = [
 
 const localServiceDescriptor = {
   barista: '',
-  port: 3000,
+  port: 3003,
   name: 'My Super Service',
   description: 'the test service',
   routes: routes,
