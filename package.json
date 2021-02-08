@@ -1,6 +1,6 @@
 {
   "name": "@baristaio/espresso",
-  "version": "0.0.31",
+  "version": "0.0.33",
   "description": "The Espresso micro service wrapper (express based)",
   "main": "service.js",
   "scripts": {
@@ -17,19 +17,19 @@
   },
   "homepage": "https://github.com/baristaio/espresso#readme",
   "devDependencies": {
-    "chai": "^4.1.2",
+    "chai": "^4.3.0",
     "coveralls": "^3.0.11",
     "deep-extend": "^0.6.0",
-    "eslint": "^7.15.0",
+    "eslint": "^7.19.0",
     "fsevents": "^1.2.12",
     "mocha": "^7.1.1"
   },
   "dependencies": {
     "amqplib": "^0.6.0",
     "assert": "^1.4.1",
-    "bluebird": "^3.7.2",
-    "body-parser": "^1.18.3",
-    "bunyan": "^1.8.14",
+    "body-parser": "^1.19.0",
+    "body-parser-xml": "^2.0.1",
+    "bunyan": "^1.8.15",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
@@ -38,7 +38,7 @@
     "mysql2": "^2.2.5",
     "redis": "^3.0.2",
     "request": "^2.88.2",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.4.1"
   },
   "engines": {
     "node": ">=10"

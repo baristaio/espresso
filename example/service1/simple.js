@@ -31,6 +31,18 @@ const localServiceDescriptor = {
   routes: routes,
   env: 'local',
   bodyLimit: 30,
+  bodyParser: {
+    xml: {
+      options: {
+        limit: '1MB', // Reject payload bigger than 1 MB
+        xmlParseOptions: {
+          normalize: true, // Trim whitespace inside text nodes
+          normalizeTags: true, // Transform tags to lowercase
+          explicitArray: false // Only put nodes in array if >1
+        }
+      }
+    }
+  },
   connections: [
     {
       name: 'amqp',
