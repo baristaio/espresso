@@ -1,10 +1,8 @@
 
-import 'babel-polyfill';
-
 const espresso = require('../../lib');
 const controller = require('./simple.ctrl');
 
-export const routes = [
+const routes = [
   {
     path: '/hello/:name',
     method: 'get',
@@ -33,5 +31,4 @@ const stop = service.start();
 setTimeout(()=> {
   service.stop(localServiceDescriptor.name, ' :Time expired');
 }, 60 * 1000 * 3);
-
 
