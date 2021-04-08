@@ -83,29 +83,31 @@ const localServiceDescriptor = {
 };
 
 const service = espresso.getService(localServiceDescriptor);
-let instance = {};
 
-service.start().then(() => {
-  // stop the service after 1 minute
+let appInstance = {};
+
+const instance = () => {
+  return appInstance;
+};
+
+const onStart = (serviceInstance) => {
   const logger = service.logger;
-  instance = {
+  appInstance = Object.assign({}, {
     started: true,
     service,
     logger
-  };
+  }, serviceInstance);
 
   logger.info('Service Started: ', Date.now());
   setTimeout(() => {
     logger.info('Stop service');
     service.stop('no need more... ', ' :Time expired');
   }, 60 * 1000 * 10);
-
-});
-
-module.exports = {
-  instance: () => instance
 };
 
-// Dev start
-// Prod Start
+service.start().then(onStart);
+
+module.exports = {
+  instance
+};
 
