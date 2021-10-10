@@ -48,22 +48,20 @@ const localServiceDescriptor = {
       name: 'amqp',
       type: 'amqp',
       descriptor: {
-        host: process.env.RABBIT_HOST || '127.0.0.1',
-        options: {
-          login: process.env.RABBIT_USER || 'guest',
-          password: process.env.RABBIT_PASSW || 'guest'
-        }
-      }
-    },
-    {
-      name: 'redis',
-      type: 'redis',
-      descriptor: {
-        host: process.env.REDIS_HOST,
-        port: process.env.REDIS_PORT,
-        password: process.env.REDIS_PASSW
+        host: process.env.RABBIT_HOST,
+        username: process.env.RABBIT_USER,
+        password: process.env.RABBIT_PASSW
       }
     }
+    // {
+    //   name: 'redis',
+    //   type: 'redis',
+    //   descriptor: {
+    //     host: process.env.REDIS_HOST,
+    //     port: process.env.REDIS_PORT,
+    //     password: process.env.REDIS_PASSW
+    //   }
+    // }
   ],
   subQueue: process.env.SUB_QUEUE || 'sub_test_task',
   pubQueue: process.env.PUB_QUEUE || 'pub_test_task',
