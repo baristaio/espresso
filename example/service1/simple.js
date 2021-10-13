@@ -50,7 +50,14 @@ const localServiceDescriptor = {
       descriptor: {
         host: process.env.RABBIT_HOST,
         username: process.env.RABBIT_USER,
-        password: process.env.RABBIT_PASSW
+        password: process.env.RABBIT_PASSW,
+        heartbeat: 60,
+        // eslint-disable-next-line camelcase
+        consumer_cancel_notify: true,
+
+        onError: () => console.log('error handling'),
+        onCancel: () => console.log('cancel handling'),
+        onClose: () => console.log('close handling')
       }
     }
     // {
