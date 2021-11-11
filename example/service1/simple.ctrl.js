@@ -1,11 +1,12 @@
 //  business method
 const sayHello = (name) => `Hello ${name}!!!`;
+const foo = (logger, text) => logger.info(text);
 
 // controller
 function sayHelloController(log, connections, req, res) {
   const service = require('./simple');//
   const t = service.test();
-  console.log(t);
+  log.info(t);
   const instance = service.instance();
 
   if (instance.started) {
@@ -16,17 +17,17 @@ function sayHelloController(log, connections, req, res) {
     log.info(sayHelloController);
     setTimeout(() => {
       const value = req.query.name;
-      res.send(sayHello(value));
-      resolve();
+      resolve({value});
     }, 100);
   });
 }
 
 function helloWorldController(log, connections, req, res) {
+  foo(log, '.. call before');
   return new Promise(resolve => {
     log.info(sayHelloController);
-    res.send('Hello world!!!');
-    resolve();
+    foo(log, 'resolve..' );
+    resolve({status: 200, body: 'Hello world!!!'});
   });
 }
 
