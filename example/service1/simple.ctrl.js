@@ -5,8 +5,8 @@ const foo = (logger, text) => logger.info(text);
 // controller
 function sayHelloController(log, connections, req, res) {
   const service = require('./simple');//
-  const t = service.test();
-  log.info(t);
+  // const t = service.test();
+  log.info('Hello');
   const instance = service.instance();
 
   if (instance.started) {
@@ -16,7 +16,7 @@ function sayHelloController(log, connections, req, res) {
   return new Promise(resolve => {
     log.info(sayHelloController);
     setTimeout(() => {
-      const value = req.query.name;
+      const value = req.url;
       resolve({value});
     }, 100);
   });
