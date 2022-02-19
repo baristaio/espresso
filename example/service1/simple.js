@@ -25,7 +25,7 @@ const routes = [
 
 const localServiceDescriptor = {
   barista: '',
-  port: 3003,
+  port: 3001,
   name: 'My Super Service',
   description: 'the test service',
   routes: routes,
@@ -48,9 +48,9 @@ const localServiceDescriptor = {
       name: 'amqp',
       type: 'amqp',
       descriptor: {
-        host: process.env.RABBIT_HOST,
-        username: process.env.RABBIT_USER,
-        password: process.env.RABBIT_PASSW,
+        host: process.env.RABBIT_HOST || 'localhost',
+        username: process.env.RABBIT_USER || 'guest',
+        password: process.env.RABBIT_PASSW || 'guest',
         heartbeat: 60,
         // eslint-disable-next-line camelcase
         consumer_cancel_notify: true,

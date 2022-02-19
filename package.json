@@ -1,6 +1,6 @@
 {
   "name": "@baristaio/espresso",
-  "version": "0.0.39",
+  "version": "0.0.40",
   "description": "The Espresso micro service wrapper (express based)",
   "main": "service.js",
   "scripts": {
@@ -40,6 +40,6 @@
     "socket.io": "4.2.0"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   }
 }
