@@ -45,7 +45,6 @@ const redisTest = (logger, connections, req) => {
       if (error) {
         throw error;
       }
-
       logger.info(`foo ---> ${value}`);
       resolve({value});
     });

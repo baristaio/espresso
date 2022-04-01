@@ -59,16 +59,16 @@ const localServiceDescriptor = {
         onCancel: () => console.log('cancel handling'),
         onClose: () => console.log('close handling')
       }
+    },
+    {
+      name: 'redis',
+      type: 'redis',
+      descriptor: {
+        host: process.env.REDIS_HOST,
+        port: process.env.REDIS_PORT,
+        password: process.env.REDIS_PASSW
+      }
     }
-    // {
-    //   name: 'redis',
-    //   type: 'redis',
-    //   descriptor: {
-    //     host: process.env.REDIS_HOST,
-    //     port: process.env.REDIS_PORT,
-    //     password: process.env.REDIS_PASSW
-    //   }
-    // }
   ],
   subQueue: process.env.SUB_QUEUE || 'sub_test_task',
   pubQueue: process.env.PUB_QUEUE || 'pub_test_task',
@@ -104,10 +104,10 @@ const onStart = (serviceInstance) => {
   }, serviceInstance);
 
   logger.info('Service Started: ', Date.now());
-  setTimeout(() => {
-    logger.info('Stop service');
-    service.stop('no need more... ', ' :Time expired');
-  }, 60 * 1000 * 10);
+  // setTimeout(() => {
+  //   logger.info('Stop service');
+  //   service.stop('no need more... ', ' :Time expired');
+  // }, 60 * 1000 * 10);
 };
 
 service.start().then(onStart);
