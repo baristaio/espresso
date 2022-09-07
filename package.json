@@ -1,6 +1,6 @@
 {
   "name": "@baristaio/espresso",
-  "version": "0.0.44",
+  "version": "0.0.45",
   "description": "The Espresso micro service wrapper (express based)",
   "scripts": {
     "test": "jest"
@@ -23,7 +23,7 @@
     "jest": "^27.2.5"
   },
   "dependencies": {
-    "amqplib": "0.8.0",
+    "amqplib": "0.10.3",
     "body-parser": "1.19.0",
     "body-parser-xml": "2.0.3",
     "bunyan": "1.8.15",
