@@ -18,9 +18,13 @@ This service provides following goodies:
  - registration in service manager - Barista   
 
 
+## Release
+0.1.0 upgrade redis client to version 4.x.x 
+
 ## Install
 
 > npm i 
+
 
 
 # API
@@ -85,8 +89,6 @@ ControllerDescriptor
  - getResource(Resources.Mongo)
 
 
-
-### JWT 
 
 
 
