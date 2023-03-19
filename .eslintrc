@@ -22,17 +22,18 @@
     "templateStrings": true,
     "unicodePointEscapes": true,
     "globalReturn": false,
-    "jsx": true
+    "jsx": true,
+    "experimentalObjectRestSpread": true
   },
   "env": {
-    //    "browser": true,
     "commonjs": true,
-    "mocha": true,
+    "jest": true,
     "node": true,
     "es6": true
   },
   "parser": "esprima",
   "rules": {
+    "rest-spread-spacing": ["error", "never"],
     /*Possible Errors */
     "comma-dangle": ["error", "never"],
     "no-cond-assign": [1, "except-parens"],
@@ -61,7 +62,7 @@
     "no-unexpected-multiline": 1,
     "no-unreachable": 1,
     "use-isnan": 1,
-    "valid-jsdoc": 1,
+    "valid-jsdoc": 0,
     "valid-typeof": 1,
 
     /* Best Practices */
@@ -152,7 +153,7 @@
     "eol-last": 1,
     "func-names": 1,
     "func-style": 0,
-    "indent": [1, 2],
+    "indent": [1, 4],
     "key-spacing": [1, { "beforeColon": false, "afterColon": true }],
     "linebreak-style": 0,
     "max-nested-callbacks": [0, 3],
@@ -201,10 +202,21 @@
 
     /* Legacy */
     "max-depth": [0, 3],
-    "max-len": [1, 121, 2],
+    "max-len": [1, 151, 2],
     "max-params": 0,
     "max-statements": 0,
     "no-bitwise": 1,
     "no-plusplus": 1
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
   }
 }
