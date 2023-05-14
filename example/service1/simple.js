@@ -30,6 +30,7 @@ const localServiceDescriptor = {
     routes: routes,
     env: 'local',
     bodyLimit: 30,
+    logLevel: 'trace',
     bodyParser: {
         xml: {
             options: {
