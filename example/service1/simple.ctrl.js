@@ -54,7 +54,8 @@ const redisTest = (logger, connections, req) => {
 const rabbitTest = async(message, { logger, connections }) => {
     logger.info(`Rabbit test:  ${message}`);
     const response = {
-        message: message
+        message: message,
+        doPublish: true
     };
     response.doPublish = true;
     return response;
