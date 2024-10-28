@@ -1,6 +1,6 @@
 {
   "name": "@baristaio/espresso",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "The Espresso micro service wrapper (express based)",
   "scripts": {
     "lint": "eslint lib/**",
@@ -30,7 +30,6 @@
     "compression": "~1.7.4",
     "cors": "^2.8.5",
     "express": "^4.21.1",
-    "express-bunyan-logger": "1.2.0",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^4.17.2",
     "mysql2": "3.11.3",
