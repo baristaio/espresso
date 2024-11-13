@@ -24,7 +24,7 @@ const routes = [
 
 const localServiceDescriptor = {
     barista: '',
-    port: 3001,
+    port: 3011,
     name: 'My Super Service',
     description: 'the test service',
     routes: routes,
